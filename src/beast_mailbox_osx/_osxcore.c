@@ -15,7 +15,7 @@ static PyObject* osx_info(PyObject* self, PyObject* args) {
     return dict;
 }
 
-static PyObject* index(PyObject* self, PyObject* args) {
+static PyObject* mailbox_index(PyObject* self, PyObject* args) {
     const char* path;
     if (!PyArg_ParseTuple(args, "s", &path)) return NULL;
     // TODO: implement macOS fast path (e.g., FSEvents/metadata) here.
@@ -24,7 +24,7 @@ static PyObject* index(PyObject* self, PyObject* args) {
 
 static PyMethodDef Methods[] = {
   {"osx_info", osx_info, METH_NOARGS, "Return basic platform info for sanity checks."},
-  {"index", index, METH_VARARGS, "OSX-specific mailbox index fast path (stub)."},
+  {"mailbox_index", mailbox_index, METH_VARARGS, "OSX-specific mailbox index fast path (stub)."},
   {NULL, NULL, 0, NULL}
 };
 
